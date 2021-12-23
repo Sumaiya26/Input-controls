@@ -1,0 +1,130 @@
+<mat-card>
+  <mat-card-title>Candidate Profile</mat-card-title><p>
+    <mat-tab-group>
+      <mat-tab label="PERSONAL INFORMATION">
+  <mat-form-field appearance="outline">
+  <mat-label>Enter Your Name</mat-label>
+  <input matInput placeholder="Placeholder">
+</mat-form-field>
+
+<p>
+<mat-form-field appearance="outline">
+  <mat-label>Enter Your Last Name</mat-label>
+  <input matInput placeholder="Placeholder">
+</mat-form-field>
+</p>
+<mat-form-field appearance="fill">
+  <mat-label>Enter Your DOB</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<h4>Select State</h4>
+<mat-form-field appearance="fill">
+  <mat-label>State Name</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
+
+<!-- <section class="example-section" [formGroup]="toppings">
+  <h4>Select your Stream:</h4>
+  <p><mat-checkbox formControlName="pepperoni">Front-End</mat-checkbox></p>
+  <p><mat-checkbox formControlName="extracheese">Back-End</mat-checkbox></p>
+  <p><mat-checkbox formControlName="mushroom">Devops</mat-checkbox></p>
+</section> -->
+
+
+
+<mat-slide-toggle>Any Physical Disability?</mat-slide-toggle>
+
+</mat-tab>
+<mat-tab label="EDUCATIONAL QUALIFICATIONS">
+  <mat-form-field appearance="outline">
+    <mat-label>10th Marks</mat-label>
+    <input matInput placeholder="Placeholder">
+  </mat-form-field>
+  <p>
+  <mat-form-field appearance="outline">
+    <mat-label>12Th Marks</mat-label>
+    <input matInput placeholder="Placeholder">
+  </mat-form-field>
+  </p>
+  <p>
+  <mat-form-field appearance="outline">
+    <mat-label>College Studied In</mat-label>
+    <input matInput placeholder="Placeholder">
+    
+      
+  </mat-form-field>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Affliated To Anna University</mat-radio-button>
+    <mat-radio-button value="2">Autonomous</mat-radio-button>
+    <mat-radio-button value="2">Both</mat-radio-button>
+  </mat-radio-group>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Your Professional Background</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>  
+  <mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Your Professional Background</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>  
+  <mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Your Professional Background</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>  
+  <mat-slider
+  thumbLabel
+  [displayWith]="formatLabel"
+  tickInterval="1000"
+  step="1000"
+  min="0"
+  max="100000"
+  aria-label="units"></mat-slider>
+  <mat-tab label="SUBMISSION ROLE">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Why Should We Hire You?</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <button (click)="FormSubmit()"mat-raised-button color="primary">SUBMIT FORM</button>
+    <button (click)="exitapp()"mat-raised-button color="primary">EXIT APPLICATION</button>
+    <app-child></app-child>
+
+
+
+
+ 
+ 
+
